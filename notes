@@ -1,0 +1,130 @@
+// Assignment Code
+// Write password to the #password input
+
+var generateBtn = document.querySelector("#generate");
+
+generateBtn.addEventListener("click", () => {
+  var length = document.querySelector("#length");
+  var lowerCase = document.querySelector("l#owercase");
+  var upperCase = document.querySelector("#uppercase");
+  var randomSymbols = document.querySelector("#symbols");
+  var numberS = document.querySelector("#numbers");
+  var passwordS = document.querySelector("#password");
+
+  results.innerText = generatePassword(
+    length,
+    lowerCase,
+    upperCase,
+    randomSymbols,
+    numberS,
+    passwordS
+  );
+});
+
+function generatePassword(lower, upper, number, symbol, length) {
+
+  let generatedPassword = "";
+
+  var typesCount = lower + upper + number + symbol;
+
+  console.log("typesCount: ", typesCount);
+}
+
+function lowerCase () {
+  return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
+}
+function upperCase () {
+  return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
+}
+function numberS () {
+  return String.fromCharCode(Math.floor(Math.random() * 10) + 48);
+}
+function randomSymbols () {
+  const symbols = '!@#$%^&*()+=<>?/'
+  return symbols[Math.floor(Math.random() * symbols.length)];
+}
+
+
+
+
+
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+
+  passwordText.value = password;
+
+}
+
+function lowerCase () {
+  return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
+}
+function upperCase () {
+  return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
+}
+function numberS () {
+  return String.fromCharCode(Math.floor(Math.random() * 10) + 48);
+}
+function randomSymbols () {
+  const symbols = '!@#$%^&*()+=<>?/'
+  return symbols[Math.floor(Math.random() * symbols.length)];
+}
+
+
+// // DOM Elements
+// // const generateBtn = document.getElementById('generate');
+// const lengthEl = document.getElementById('length');
+// const lowercaseEl = document.getElementById('lowercase');
+// const uppercaseEl = document.getElementById('uppercase');
+// const symbolsEl = document.getElementById('symbols');
+// const numbersEl = document.getElementById('numbers');
+// const resultEl = document.getElementById('result');
+
+
+const randomItems = {
+  lower: lowerCase,
+  upper: upperCase,
+  number: numberS,
+  randomSymbols,
+};
+
+// generateEl.addEventListener('click', () => {
+//   const length = lengthEl.value;
+
+//   console.log(length)
+// });
+
+
+// Add event listener to generate button
+window.alert(
+  "Would you like a password?"
+);
+
+var userChoice = window.confirm("Would you like uppercase letters?");
+
+
+var userChoice = window.confirm("Would you like lowercase letters?");
+
+var userChoice = window.confirm("Would you like numbers?");
+
+var userChoice = window.confirm("Would you like symbols?");
+
+
+
+// // ```
+// GIVEN I need a new, secure password
+// WHEN I click the button to generate a password
+// THEN I am presented with a series of prompts for password criteria
+// WHEN prompted for password criteria
+// THEN I select which criteria to include in the password
+// WHEN prompted for the length of the password
+// THEN I choose a length of at least 8 characters and no more than 128 characters
+// WHEN prompted for character types to include in the password
+// THEN I choose lowercase, uppercase, numeric, and/or special characters
+// WHEN I answer each prompt
+// THEN my input should be validated and at least one character type should be selected
+// WHEN all prompts are answered
+// THEN a password is generated that matches the selected criteria
+// WHEN the password is generated
+// THEN the password is either displayed in an alert or written to the page
+// ```
