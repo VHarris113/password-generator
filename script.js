@@ -1,4 +1,47 @@
+// generate random password
+var length = {
+  max: i=20,
+  min: i=8,
+};
 
+var lowerCase = { 
+  length:
+  function lowerCase () {
+    return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
+  }
+}
+
+var upperCase = {
+  upperCase:
+  function upperCase () {
+  return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
+}
+};
+
+var upperCase = {
+  numberS:
+  function numberS () {
+    return String.fromCharCode(Math.floor(Math.random() * 10) + 48);
+  }
+};
+
+var randomSymbols = {
+  randomSymbols:
+  function randomSymbols () {
+    var symbols = '!@#$%^&*()+=<>?/'
+      return symbols[Math.floor(Math.random() * symbols.length)] 
+    }
+}
+
+function generatePassword(length, lowerCase, upperCase, randomSymbols, numberS) {
+
+}
+
+// for(var i = 0; i <= result; i++){
+//   password = password + 
+// };
+
+  let password = "";
 // var options = []
 
 var length = document.querySelector("#length");
@@ -24,32 +67,37 @@ var numberS = numberS.value
 //   symbols: randomSymbols,
 // }
 
-var userChoice = window.alert("Halt! Would you like a password?");
+var userChoice = window.prompt("Halt! Would you like a password?");
 
-var message;
 if (!userChoice) {
-  message = "Goodbye!";
+  return;
 }
 
 
-function generatePassword(length, lowerCase, upperCase, randomSymbols, numberS) {
-}
+// function generatePassword(length, lowerCase, upperCase, randomSymbols, numberS) {
+// }
 
 var userChoice = window.confirm("Would you like lowercase letters?") {
   function lowerCase () {
     return String.fromCharCode(Math.floor(Math.random() * 26) + 97)
   }
 }; if else {
+  return;
+}
+
+{
   var userChoice;
  if (window.confirm("Would you like uppercase letters?")) {
   function upperCase () {
     return String.fromCharCode(Math.floor(Math.random() * 26) + 65)
   }
-}; if else {
+
   var userChoice = window.confirm("Would you like numbers?")
-}; if else {
+
   var userChoice = window.confirm("Would you like symbols?")
-}
+
+
+
 
 // }
 
@@ -88,17 +136,3 @@ var userChoice = window.confirm("Would you like lowercase letters?") {
 function generatePassword(length, lowerCase, upperCase, randomSymbols, numberS) {
 
 }
-
-function lowerCase () {
-  return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
-}
-function upperCase () {
-  return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
-}
-function numberS () {
-  return String.fromCharCode(Math.floor(Math.random() * 10) + 48);
-}
-function randomSymbols () {
-  var symbols = '!@#$%^&*()+=<>?/'
-    return symbols[Math.floor(Math.random() * symbols.length)] 
-  }
