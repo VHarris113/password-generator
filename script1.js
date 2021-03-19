@@ -13,24 +13,37 @@ var finalPass = lowerCase.concat(
 var passwordText = document.querySelector("#password");
 var generateBtn = document.querySelector("#generate");
 
-var confirm;
-if (window.confirm("Would you like a password?")) {
-  
-    
-  } else statemet
-}
-
 // If confirm, continue to next question series
 // If cancel, then display goodbye message
 
-// Write password to the #password input
-// Assignment Code
+var passLength = prompt(
+  "How many characters do you want it to be? Choose between 8-128.",
+  8
 
+
+
+
+// Write password to the #password input
 function writePassword() {
   
+
+  passwordText.value = password;
+}
+// Assignment Code
+if (window.confirm("Would you like a password?")) {
+ 
+} else {
+  alert("Goodbye!")
+}
+
+
+
+
+function generatePassword() {
+  // Ask user for input
   var chosenChars = ["lowerCase", "upperCase", "numbers", "symbols"];
   var passLength = prompt(
-    "How many characters do you want it to be? Choose between 8-129.",
+    "How many characters do you want it to be? Choose between 8-128.",
     8
   );
   var confirmUpper = window.confirm("Would you like uppercase letters?");
@@ -50,7 +63,7 @@ function writePassword() {
     if (confirmSpecial) {
         chosenChars += symbols;
     }
-
+)
 
 var passLength = function() {
   for (var i = 0; i < passLength; i++) {
@@ -64,12 +77,6 @@ var passLength = function() {
 }
 }
 
-function writePassword() {
-  
-
-  passwordText.value = password;
-}
-
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", passwordText);
     // gives us password
