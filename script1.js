@@ -1,43 +1,61 @@
+var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+var upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "x", "Y", "Z"]
+var randomNumber = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+var randomSymbols = ["!", "@", "#", "$", "^", "&", "*", "(", ")"]
+var chosenChars = [];
+var finalPass = lowerCase.concat(upperCase.concat(randomNumber.concat(randomSymbols.concat)))
 
+var passwordText = document.querySelector("#password");
+var generateBtn = document.querySelector("#generate");
 
-var options = ["length", "upperCase", "lowerCase", "randomNumber", "randomSymbols"]
+var userChoice = window.confirm("Halt! Would you like a password?")
+    // If confirm, continue to next
+    // If cancel, then display goodbye message
 
-var userChoice = window.confirm("Halt! Would you like a password?");
+  
 
-var userGen = function () {
-    var userChoice = window.confirm("Would you like uppercase letters?");
-};      if (confirm("Awesome-sauce!")) {
+// Write password to the #password input
+function writePassword() {
+    var password = generatePassword(chosenCharsArray); {
+    }
+    
+    passwordText.value = password;
+  
+};
+// Assignment Code
+
+// var userGen = function () {
+    var chosenChars = window.confirm("Would you like uppercase letters?")
+          if (upperCase) {
+    var chosenChars = chosenChars.concat(finalPass);
         window.confirm("Would you like lowercase letters?");
-};      if (confirm("Neato!")) {
+};      if (lowerCase) {
+    var chosenChars = chosenChars.concat(finalPass);
+};
         window.confirm("Do you want to add symbols?");
-};      if (confirm("Woohoo!")) {
+      if (randomSymbols) {
+    var chosenChars = chosenChars.concat(finalPass);
+};
         window.confirm("Would you like to add numbers?");
-};      if (confirm("Noice!"));
-
-var randomChar = {
-    length: passLength,
-    lower: lowerCase,
-    upper: upperCase,
-    number: randomNumber,
-    symbol: randomSymbols
-
+      if (randomNumber) {
+    var chosenChars = chosenChars.concat(finalPass);
 };
 
-function passLength() {
-    i = 0; i < 20; i++;
-    return length[4];
-}
+var passLength = prompt("How many characters do you want it to be? Choose between 8-129.")
+    for (var i = 0; i < length; i++) {
 
-function lowerCase() {
-    return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
-};
-function upperCase() {
-    return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
-};
-function randomNumber() {
-    return String.fromCharCode(Math.floor(Math.random() * 10) + 48);
-};
-function randomSymbols() {
-    var symbols = "~!@#%^&*()_+";
-    return symbols[Math.floor(Math.random() * symbols.length)];
-};
+        var randomIzed = Math.floor(Math.random() * chosenChars.length)
+
+        // push into final pass string
+
+        var chosenChars = cho[random];
+        var finalPass = '';
+    };
+
+    // return finalPass;
+
+
+// Add event listener to generate button
+generateBtn.addEventListener("click", function() {
+    // if followed all prompts, then password is generated
+});
