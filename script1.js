@@ -20,9 +20,10 @@ function writePassword() {
   passwordText.value = password;
 }
 // Assignment Code
+var hello = window.confirm("Would you like a password?")
 
 function generatePassword() {
-  var finalPass = "";
+  var writePassword = "";
   var chosenChars = "";
   var passLength = prompt(
     "How many characters do you want it to be? Choose between 8-129.",
@@ -47,12 +48,14 @@ function generatePassword() {
     }
 
 
-
+var writePassword = function() {
   for (var i = 0; i < passLength; i++) {
-    var randomized = Math.floor(Math.random() * chosenChars.length);
+    writePassword = Math.floor(Math.random() * chosenChars.length);
   }
 
-  return finalPass;
+  return writePassword;
+}
 }
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+    
