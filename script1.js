@@ -1,62 +1,58 @@
-var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-var upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "x", "Y", "Z"]
-var randomNumber = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
-var randomSymbols = ["!", "@", "#", "$", "^", "&", "*", "(", ")"]
-var chosenChars = [];
-var finalPass = lowerCase.concat(upperCase.concat(randomNumber.concat(randomSymbols.concat)))
+var lowerCase = "abcdefghijklmnopqrstuvwxyz";
+var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var numbers = "0123456789";
+var symbols = "!@#$^&*()-_=+<>,.?;:";
+
+var finalPass = lowerCase.concat(
+  upperCase.concat(numbers.concat(symbols.concat))
+);
 
 var passwordText = document.querySelector("#password");
 var generateBtn = document.querySelector("#generate");
 
-var userChoice = window.confirm("Halt! Would you like a password?")
-    // If confirm, continue to next
-    // If cancel, then display goodbye message
-
-  
+// If confirm, continue to next question series
+// If cancel, then display goodbye message
 
 // Write password to the #password input
 function writePassword() {
-    var password = generatePassword(chosenCharsArray); {
-    }
-    
-    passwordText.value = password;
-  
-};
+  var password = generatePassword();
+
+  passwordText.value = password;
+}
 // Assignment Code
 
-// var userGen = function () {
-    var chosenChars = window.confirm("Would you like uppercase letters?")
-          if (upperCase) {
-    var chosenChars = chosenChars.concat(finalPass);
-        window.confirm("Would you like lowercase letters?");
-};      if (lowerCase) {
-    var chosenChars = chosenChars.concat(finalPass);
-};
-        window.confirm("Do you want to add symbols?");
-      if (randomSymbols) {
-    var chosenChars = chosenChars.concat(finalPass);
-};
-        window.confirm("Would you like to add numbers?");
-      if (randomNumber) {
-    var chosenChars = chosenChars.concat(finalPass);
-};
+function generatePassword() {
+  var finalPass = "";
+  var chosenChars = "";
+  var passLength = prompt(
+    "How many characters do you want it to be? Choose between 8-129.",
+    8
+  );
+  var confirmUpper = window.confirm("Would you like uppercase letters?");
+  if (confirmUpper) {
+    chosenChars += upperCase;
+  }
 
-var passLength = prompt("How many characters do you want it to be? Choose between 8-129.")
-    for (var i = 0; i < length; i++) {
-
-        var randomIzed = Math.floor(Math.random() * chosenChars.length)
-
-        // push into final pass string
-
-        var chosenChars = [random];
-        var finalPass = '';
-    };
-
-    // return finalPass;
+  var confirmLower = window.confirm("Would you like lowercase letters?");
+    if (confirmLower) {
+        chosenChars += lowerCase;
+    }
+    var confirmNumber = window.confirm("Would you like numbers?");
+    if (confirmNumber) {
+        chosenChars += numbers;
+    }
+    var confirmSpecial = window.confirm("Would you like symbols?");
+    if (confirmSpecial) {
+        chosenChars += symbols;
+    }
 
 
+
+  for (var i = 0; i < passLength; i++) {
+    var randomized = Math.floor(Math.random() * chosenChars.length);
+  }
+
+  return finalPass;
+}
 // Add event listener to generate button
-generateBtn.addEventListener("click", function() {
-    // if followed all prompts, then password is generated
-    if (upperCase)
-});
+generateBtn.addEventListener("click", writePassword);
