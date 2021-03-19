@@ -3,6 +3,9 @@ var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var numbers = "0123456789";
 var symbols = "!@#$^&*()-_=+<>,.?;:";
 
+
+
+
 var finalPass = lowerCase.concat(
   upperCase.concat(numbers.concat(symbols.concat))
 );
@@ -10,21 +13,22 @@ var finalPass = lowerCase.concat(
 var passwordText = document.querySelector("#password");
 var generateBtn = document.querySelector("#generate");
 
+var confirm;
+if (window.confirm("Would you like a password?")) {
+  
+    
+  } else statemet
+}
+
 // If confirm, continue to next question series
 // If cancel, then display goodbye message
 
 // Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-
-  passwordText.value = password;
-}
 // Assignment Code
-var hello = window.confirm("Would you like a password?")
 
-function generatePassword() {
-  var writePassword = "";
-  var chosenChars = "";
+function writePassword() {
+  
+  var chosenChars = ["lowerCase", "upperCase", "numbers", "symbols"];
   var passLength = prompt(
     "How many characters do you want it to be? Choose between 8-129.",
     8
@@ -48,14 +52,24 @@ function generatePassword() {
     }
 
 
-var writePassword = function() {
+var passLength = function() {
   for (var i = 0; i < passLength; i++) {
-    writePassword = Math.floor(Math.random() * chosenChars.length);
+  var random = Math.floor(Math.random() * chosenChars.length);
   }
 
-  return writePassword;
+  password += chosenChars[random];
+
+  return password;
+  
 }
 }
+
+function writePassword() {
+  
+
+  passwordText.value = password;
+}
+
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-    
+    // gives us password
