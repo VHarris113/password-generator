@@ -48,7 +48,7 @@ var passLength = prompt("How many characters do you want it to be? Choose betwee
 
         // push into final pass string
 
-        var chosenChars = cho[random];
+        var chosenChars = [random];
         var finalPass = '';
     };
 
@@ -58,4 +58,5 @@ var passLength = prompt("How many characters do you want it to be? Choose betwee
 // Add event listener to generate button
 generateBtn.addEventListener("click", function() {
     // if followed all prompts, then password is generated
+    if (upperCase)
 });
