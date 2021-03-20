@@ -1,3 +1,5 @@
+generateBtn.addEventListener("click", writePassword);
+
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
@@ -6,6 +8,7 @@ var lowerCase = "abcdefghijklmnopqrstuvwxyz";
 var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var numbers = "0123456789";
 var symbols = "!@#$^&*()-_=+<>,.?;:";
+var randomPassword = "";
 
 // Ask user for input
 var chosenChars = ["lowerCase", "upperCase", "numbers", "symbols"];
@@ -15,12 +18,11 @@ var confirmUpper;
 var confirmLower;
 var confirmNumber;
 var confirmSpecial;
-  
+
+window.alert("Hello, want a password?")
+
 function generatePassword() {
-    passLength = (prompt("How many characters would you like in your password? Pick 8 to 128."), 8);
-    while(passLength <= 7 || passLength >= 129) {
-        alert("Password must be between 8-128 characters.");
-        var passLength = (prompt("How many characters would you like? Pick 8 to 128."));
+    var passLength = (prompt("How many characters would you like in your password? Pick 8 to 128."), 8);
     }
 
     var confirmUpper = confirm("Would you like uppercase letters?");
@@ -39,9 +41,19 @@ function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
     if (confirmSpecial) {
-        chosenChars = 
+        chosenChars = chosenChars.concat(symbols);
     }
-
+    if (confirmUpper) {
+        chosenChars = chosenChars.concat(upperCase);
+    }
+    if (confirmNumbers) {
+        chosenChars = chosenChars.concat(numbers);
+    }
+    if (confirmSpecial) {
+        chosenChars = chosenChars.concat(special);
+    }
+    
+    var randomPassword = "";
 
 
   passwordText.value = password;
