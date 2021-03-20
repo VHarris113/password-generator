@@ -7,19 +7,23 @@ var symbols = document.getElementById("symbols");
 var numbers = document.getElementById("numbers");
 var length = document.getElementById("length");
 var upperCase = document.getElementById("upperCase");
-// var lowerCase = document.getElementById("lowerCase");
+var lowerCase = document.getElementById("lowerCase");
 
 //Variables
-var lowerCase = ["a", "b", "c", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
-var upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
-var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-var symbols = ["!", "@", "#", "$", "^", "&", "*", "(", ")", "-", "_", "=", "+", "<", ">", "?"]
-  upperCase.concat(lowerCase)
-  lowerCase.concat(upperCase)
-  symbols.concat(numbers)
-  numbers.concat(symbols);
+var lowerCaseArray = ["a", "b", "c", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+var upperCaseArray = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+var numbersArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+var symbolsArray = ["!", "@", "#", "$", "^", "&", "*", "(", ")", "-", "_", "=", "+", "<", ">", "?"]
+  // upperCase.concat(lowerCase)
+  // lowerCase.concat(upperCase)
+  // symbols.concat(numbers)
+  // numbers.concat(symbols);
 
    // console.log(symbols)
+
+// length box 8-128
+// options to choose
+// 
 
 copy.addEventListener("click", () => {
   var textarea = document.createElement("textarea");
@@ -32,7 +36,7 @@ copy.addEventListener("click", () => {
   textarea.select();
   document.execCommand("copy");
   textarea.remove();
-  alert("Password copied to clipboard! <3");
+  alert("Password copied to clipboard! ❤");
 });
 
   // Write Password Selection
@@ -40,13 +44,13 @@ passwordForm.addEventListener("submit", (e) => {
   e.preventDefault();
   var charAmount = length.value;
   var addUpperCase = upperCase.checked;
-  // var addLowerCase = lowerCase.checked;
+  var addLowerCase = lowerCase.checked;
   var addNumbers = numbers.checked;
   var addSymbols = symbols.checked;
   var password = generatePassword(
     charAmount,
     addUpperCase,
-    // addLowerCase,
+    addLowerCase,
     addNumbers,
     addSymbols,
   );
@@ -57,26 +61,25 @@ passwordForm.addEventListener("submit", (e) => {
 var generatePassword = (
   charAmount,
   addUpperCase,
-  // addLowerCase,
+  addLowerCase,
   addNumbers,
   addSymbols,
 ) => {
-  var charCodes = lowerCase;
-  if (addUpperCase) charCodes = charCodes.concat(upperCase);
-  // if (addLowerCase) charCodes = charCodes.concat(lowerCase);
+  var charCodes = [];
+  if (addUpperCase) charCodes = charCodes.concat(upperCaseArray);
+  if (addLowerCase) charCodes = charCodes.concat(lowerCaseArray);
   // unsure of this line of code
-  if(addNumbers) charCodes = charCodes.concat(numbers);
-  if(addSymbols) charCodes = charCodes.concat(symbols);
-  const passwordChars = [];
+  if(addNumbers) charCodes = charCodes.concat(numbersArray);
+  if(addSymbols) charCodes = charCodes.concat(symbolsArray);
+  var passwordChars = "";
   for (var i = 0; i < charAmount; i++) {
-    const characterCode =
-    charCodes(Math.floor(Math.random() * charCodes.length));
+    const characterCode = Math.floor(Math.random() * charCodes.length);
 
-    finalPassword + final 
+    //finalPassword + final 
 
-    passwordChars.push(fromCharCodes(characterCode));
+    var tempVal = charCodes[characterCode];
+
+    passwordChars += tempVal;
   }
-  return finalPassword
+  return passwordChars.toString();
 };
-
-
