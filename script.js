@@ -69,9 +69,9 @@ var numberS = numberS.value
 
 var userChoice = window.prompt("Halt! Would you like a password?");
 
-if (!userChoice) {
-  return;
-}
+// if (!userChoice) {
+//   return;
+// }
 
 
 // function generatePassword(length, lowerCase, upperCase, randomSymbols, numberS) {
