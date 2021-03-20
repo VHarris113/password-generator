@@ -1,101 +1,138 @@
-// Assignment Code
-var generateBtn = document.querySelector("#generate");
-
-// Needed variables
-var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-// abcdefghijklmnopqrstuvwxyz
-var upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-// "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-// "0123456789";
-var symbols = ["!", "@", "#", "$", "^", "&", "*", "(", ")", "_", "=", "+", "?"];
-// "!@#$^&*()-_=+<>,.?;:";
-var randomPassword = "";
-
-function chosenChars() {
-    var passLength = parseInt(prompt("How many characters would you like in your password? (From 8 to 128 characters)"), 8);
-
-    if (passLength < 8) {
-        alert("Password must contain 8 or more characters.");
-        return;
-    }
-    if (passLength > 128) {
-        alert("The password must be less than 128 characters.");
-        return;
-    }
-
-    var confirmUpper = confirm("Would you like uppercase letters?");
-    
-    var confirmLower = confirm("Would you like lowercase letters?");
-    
-    var confirmNumber = confirm("Would you like to add numbers?");
-    
-    var confirmSpecial = confirm("Would you like to add special characters?");
-
-    if (!confirmUpper && !confirmLower && !confirmNumber && !confirmSpecial) {
-        alert("Your password should include at least one special character, letter, and/or number.");
-        return;
-    }
-
-    var options = {
-        passLength: length,
-        numbers: numbers,
-        lowerCase: lowerCase,
-        upperCase: upperCase,
-        symbols: symbols,
-    }
-
-    return options;
-
+// generate random password
+var length = {
+  max: i=20,
+  min: i=8,
 };
 
+var lowerCase = { 
+  length:
+  function lowerCase () {
+    return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
+  }
+}
 
-function generatePassword() {
+var upperCase = {
+  upperCase:
+  function upperCase () {
+  return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
+}
+};
 
-    var options = generateOptions();
-    console.log(options)
+var upperCase = {
+  numberS:
+  function numberS () {
+    return String.fromCharCode(Math.floor(Math.random() * 10) + 48);
+  }
+};
 
-    var randomPassword = [];
-    console.log(randomPassword)
-
-    if (options.symbols) {
-        for (1 =0; i < symbols.length; ++i) {
-            randomPassword.push(symbols[i]);
-        }
-    };
-
-    if (options.numbers) {
-        for (1 =0; i < numbers.length; ++i) {
-            randomPassword.push(numbers[i]);
-        }
-    };
-
-    if (options.upperCase) {
-        for (1 =0; i < upperCase.length; ++i) {
-            randomPassword.push(upperCase[i]);
-        }
-    };
-
-    if (options.lowerCase) {
-        for (1 =0; i < lowerCase.length; ++i) {
-            randomPassword.push(lowerCase[i]);
-        }
-    };
-
-    var genPw = [];
-
-    for (let i = 0; i < options.length; ++i) {
-        var randomPwd = Math.floor(Math.random() * Math.floor(randomPassword.length));
-        genPw.push(randomPassword[randomPwd]);
+var randomSymbols = {
+  randomSymbols:
+  function randomSymbols () {
+    var symbols = '!@#$%^&*()+=<>?/'
+      return symbols[Math.floor(Math.random() * symbols.length)] 
     }
+}
 
-    console.log(genPw)
+function generatePassword(length, lowerCase, upperCase, randomSymbols, numberS) {
 
-    var finalPass = genPw.join("");
-    console.log(finalPass);
+}
 
-    document.getElementById
+// for(var i = 0; i <= result; i++){
+//   password = password + 
+// };
 
-    var password = "";
-    
-    generateBtn.addEventListener("click", writePassword)
+  let password = "";
+// var options = []
+
+var length = document.querySelector("#length");
+var lowerCase = document.querySelector("#lowercase");
+var upperCase = document.querySelector("#uppercase");
+var randomSymbols = document.querySelector("#symbols");
+var numberS = document.querySelector("#numbers");
+var result = document.querySelector("#result");
+var generateBtn = document.getElementById("generateBtn");
+
+var length = length.value
+var lowerCase = lowerCase.value
+var upperCase = upperCase.value
+var randomSymbols = randomSymbols.value
+var numberS = numberS.value
+
+// var password = generatePassword(length, lowerCase, upperCase, randomSymbols, numberS)
+
+// var randomFunc = {
+//   lower: lowerCase,
+//   upper: upperCase,
+//   number: numberS,
+//   symbols: randomSymbols,
+// }
+
+var userChoice = window.prompt("Halt! Would you like a password?");
+
+if (!userChoice) {
+  return;
+}
+
+
+// function generatePassword(length, lowerCase, upperCase, randomSymbols, numberS) {
+// }
+
+var userChoice = window.confirm("Would you like lowercase letters?") {
+  function lowerCase () {
+    return String.fromCharCode(Math.floor(Math.random() * 26) + 97)
+  }
+}; if else {
+  return;
+}
+
+{
+  var userChoice;
+ if (window.confirm("Would you like uppercase letters?")) {
+  function upperCase () {
+    return String.fromCharCode(Math.floor(Math.random() * 26) + 65)
+  }
+
+  var userChoice = window.confirm("Would you like numbers?")
+
+  var userChoice = window.confirm("Would you like symbols?")
+
+
+
+
+// }
+
+// var userChoice = window.confirm("Would you like lowercase letters?");
+
+// var userChoice = window.confirm("Would you like numbers?");
+
+// var userChoice = window.confirm("Would you like symbols?");
+
+
+
+// Generate Events
+// I want to click yes or no when asked a question
+// generateBtn.addEventListener("click",
+//   length: 
+
+//   passwords.innerText = generatePassword(
+//     length,
+//     lowerCase,
+//     upperCase,
+//     numberS,
+//     randomSymbols,
+//   );
+// // });
+ 
+// function generatePassword(lower, upper, number, symbol, length) {
+//   let result = "",
+
+//    const typesCount = lower + upper + number + symbol;
+
+//    const typesArr = [lower, upper, number, and symbol];
+
+
+// }
+
+function generatePassword(length, lowerCase, upperCase, randomSymbols, numberS) {
+
+}

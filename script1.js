@@ -1,15 +1,8 @@
-// var lowerCase = "abcdefghijklmnopqrstuvwxyz";
-// var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-// var numbers = "0123456789";
-// var symbols = "!@#$^&*()-_=+<>,.?;:";
-var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-// abcdefghijklmnopqrstuvwxyz
-var upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-// "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-// "0123456789";
-var symbols = ["!", "@", "#", "$", "^", "&", "*", "(", ")", "_", "=", "+", "?"];
-// "!@#$^&*()-_=+<>,.?;:";
+var lowerCase = "abcdefghijklmnopqrstuvwxyz";
+var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var numbers = "0123456789";
+var symbols = "!@#$^&*()-_=+<>,.?;:";
+
 
 
 
@@ -23,8 +16,6 @@ var generateBtn = document.querySelector("#generate");
 // If confirm, continue to next question series
 // If cancel, then display goodbye message
 
-
-
 // Write password to the #password input
 function writePassword() {
   
@@ -33,19 +24,13 @@ function writePassword() {
 }
 // Assignment Code
 if (window.confirm("Would you like a password?")) {
- 
-} else {
-  alert("Goodbye!")
-}
-
-
-
-
+  
+  
 function generatePassword() {
-  // Ask user for input
+  
   var chosenChars = ["lowerCase", "upperCase", "numbers", "symbols"];
   var passLength = prompt(
-    "How many characters do you want it to be? Choose between 8-128.",
+    "How many characters do you want it to be? Choose between 8-129.",
     8
   );
   var confirmUpper = window.confirm("Would you like uppercase letters?");
@@ -65,7 +50,7 @@ function generatePassword() {
     if (confirmSpecial) {
         chosenChars += symbols;
     }
-
+)
 
 var passLength = function() {
   for (var i = 0; i < passLength; i++) {
@@ -80,5 +65,5 @@ var passLength = function() {
 }
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", passwordText);
+generateBtn.addEventListener("click", writePassword);
     // gives us password
