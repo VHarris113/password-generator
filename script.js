@@ -15,7 +15,7 @@ function writePassword() {
 }
 function generatePassword() {
   var possiblePass = '';
-  var finalPass='';
+  var finalPass = '';
   //The password criteria for a user
   var passLength = parseInt(prompt("How many characters do you want in your password? Choose between 8-128", 8));
   //Make sure the numbers are in range
@@ -31,25 +31,25 @@ function generatePassword() {
     alert("This is too many characters.");
     return "Please try again.";
   };
-  var lowerChoice = confirm("Do you want lowercase letters in your password?");
-  if (lowerChoice) {
+  var lowerCaseVar = confirm("Do you want lowercase letters in your password?");
+  if (lowerCaseVar) {
     possiblePass += lowercase;
   };
-  var upperChoice = confirm("Do you want uppercase letters in your password?");
-  if (upperChoice) {
+  var upperCaseVar= confirm("Do you want uppercase letters in your password?");
+  if (upperCaseVar) {
     possiblePass += uppercase;
   };
-  var numberChoice = confirm("Do you want numbers in your password?");
-  if (numberChoice) {
+  var numberVar = confirm("Do you want numbers in your password?");
+  if (numberVar) {
     possiblePass += numbers;
   };
-  var specialChoice = confirm("Do you want special characters in your password?");
-  if (specialChoice) {
+  var symbolVar = confirm("Do you want special characters in your password?");
+  if (symbolVar) {
     possiblePass += symbols;
   };
   for (var i = 0; i < passLength; i++) {
-    var randomIndex = Math.floor(Math.random() * possiblePass.length);
-    var randomCharacter = possiblePass[randomIndex];
+    var randomized = Math.floor(Math.random() * possiblePass.length);
+    var randomCharacter = possiblePass[randomized];
     finalPass += randomCharacter;
   }
   //Final
